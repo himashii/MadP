@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MAD2</string>
+    <string-array name="Spinner_items">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="Spinner_it">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string name="str_card_text1"> ABC Hospital</string>
+    <string name="str_card_text0"> A+  </string>
+    <string name="str_card_text2"> A- </string>
+    <string name="str_card_text3"> B+</string>
+    <string name="str_card_text4"> B-</string>
+    <string name="str_card_text5">AB+ </string>
+    <string name="str_card_text6"> AB-</string>
+    <string name="str_card_text7"> O+</string>
+    <string name="str_card_text8"> O-</string>
+    <string name="str_card_text9"> | Yes</string>
+    <string name="str_card_text10"> | No </string>
+    <string name="str_card_text11"> City :  Colombo</string>
+    <string name="str_card_text12"> Contact : 0112111111</string>
+    <string name="str_card_text50"> Available Blood Groups</string>
+    <string name="str_card_text61"> BB Hospital</string>
+    <string name="str_card_text60">
+        Availability A+    : Yes Availability A-    : No Availability B+    : Yes Availability B- : Yes Availability AB+ : Yes Availability AB- : Yes Availability O+ : Yes Availability O- : No  City : Colombo
+    </string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1087230273705",
+    "firebase_url": "https://mad2-fccbb.firebaseio.com",
+    "project_id": "mad2-fccbb",
+    "storage_bucket": "mad2-fccbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087230273705:android:b6489dbb28642d9373a1b8",
+        "android_client_info": {
+          "package_name": "com.example.mad2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087230273705-1kf8174usqt4aj1n1bid9e22m6mmt3d2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mad2",
+            "certificate_hash": "f43ea6ec78089887c106464357d5543c2e7fd744"
+          }
+        },
+        {
+          "client_id": "1087230273705-6qq3uf8q7rpsb0u3v7beol9odmpdcvh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF1bQHksTtvPZhp5hQJNZqiCcwrCL8S8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087230273705-6qq3uf8q7rpsb0u3v7beol9odmpdcvh4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
