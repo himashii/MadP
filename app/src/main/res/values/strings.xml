@@ -11,6 +11,11 @@
         <item>No</item>
     </string-array>
 
+
+    <string name="invalid_hospital_name">Please Enter a Name</string>
+    <string name="invalid_phone_number">Please Enter a Valid Phone Number</string>
+    <string name="invalid_city">Please Enter a City</string>
+
     <string name="str_card_text1"> ABC Hospital</string>
     <string name="str_card_text0"> A+  </string>
     <string name="str_card_text2"> A- </string>

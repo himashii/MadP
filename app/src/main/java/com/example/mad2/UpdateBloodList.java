@@ -105,12 +105,12 @@ public class UpdateBloodList extends AppCompatActivity {
                 String g = gt.getSelectedItem().toString();
                 String h = ht.getSelectedItem().toString();
                 String contactt = contact.getText().toString();
+                String cit = city.getText().toString();
+                String hos = hospital.getText().toString();
 
                 Ref = FirebaseDatabase.getInstance().getReference().child("add");
 
                 HashMap hashMap = new HashMap();
-
-
 
                 hashMap.put("a_plus",a);
                 hashMap.put("a_minus",b);
@@ -120,6 +120,8 @@ public class UpdateBloodList extends AppCompatActivity {
                 hashMap.put("ab_minus",f);
                 hashMap.put("o_plus",g);
                 hashMap.put("o_minus",h);
+                hashMap.put("contact",contactt);
+                hashMap.put("contact",contactt);
                 hashMap.put("contact",contactt);
 
                 Ref.child("1").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {

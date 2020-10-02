@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -20,6 +25,8 @@ public class CreateNew extends AppCompatActivity {
     Button button;
     Add add;
     EditText hospital,city,contact;
+
+    AwesomeValidation awesomeValidation;
 
     private void clearControls(){
         a.setSelected(Boolean.parseBoolean(" "));
@@ -57,12 +64,21 @@ public class CreateNew extends AppCompatActivity {
         h = findViewById(R.id.hSpinner);
 
 
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        awesomeValidation.addValidation(this,R.id.hospital,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_hospital_name);
+        awesomeValidation.addValidation(this,R.id.contact,
+                "[0-9]{10}$",R.string.invalid_phone_number);
+        awesomeValidation.addValidation(this,R.id.city,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_city);
+
         add = new Add();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // if(awesomeValidation.validate()){
+                 if(awesomeValidation.validate()){
 
                 ref = FirebaseDatabase.getInstance().getReference().child("add");
                 add.setA_plus(a.getSelectedItem().toString().trim());
@@ -114,19 +130,19 @@ public class CreateNew extends AppCompatActivity {
 
 
 
-              /* }else {
+               }else {
                     Toast.makeText(getApplicationContext(),"Validation Failed..",Toast.LENGTH_SHORT).show();
                 }
 
 
-                  });
-            }*/
+
+            }
 
                 /*public void showToast (View view){
                     Toast toast = Toast.makeText(getApplicationContext(), "New List Created", Toast.LENGTH_LONG);
                     toast.show();
                 }*/
-            }
+
         });
     }
 }
