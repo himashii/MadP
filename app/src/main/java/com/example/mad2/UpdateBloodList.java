@@ -61,10 +61,10 @@ public class UpdateBloodList extends AppCompatActivity {
         String cit = getIntent().getStringExtra("city");
         String con = getIntent().getStringExtra("contact");
 
-        at.setSelected(Boolean.parseBoolean(as));
-        bt.setSelected(Boolean.parseBoolean(bs));
-        ct.setSelected(Boolean.parseBoolean(cs));
-        dt.setSelected(Boolean.parseBoolean(ds));
+        at.setText(as);
+        bt.setText(bs);
+        ct.setText(cs);
+        dt.setText(ds);
         et.setSelected(Boolean.parseBoolean(es));
         ft.setSelected(Boolean.parseBoolean(fs));
         gt.setSelected(Boolean.parseBoolean(gs));
