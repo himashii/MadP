@@ -126,11 +126,20 @@ public class UpdateBloodList extends AppCompatActivity {
                     @Override
                     public void onSuccess(Object o) {
                         Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
-                       /* Intent i = new Intent(getApplicationContext(),Details.class);
-                        startActivity(i); */
+                        Intent i = new Intent(getApplicationContext(),List.class);
+                        startActivity(i);
                     }
                 });
 
+            }
+        });
+
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),List.class);
+                startActivity(i);
             }
         });
     }
