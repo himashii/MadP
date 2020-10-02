@@ -95,7 +95,7 @@ public class CreateNew extends AppCompatActivity {
                 String City = city.getText().toString();
                 String Contact = contact.getText().toString();
 
-                Intent i = new Intent(getApplicationContext(),List.class);
+                Intent i = new Intent(getApplicationContext(),List1.class);
                 //clearControls();
 
                 i.putExtra("aa", A);
