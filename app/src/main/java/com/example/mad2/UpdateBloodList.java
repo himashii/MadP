@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,10 +25,10 @@ import java.util.HashMap;
 public class UpdateBloodList extends AppCompatActivity {
 
     Button button1 , button2;
-    Spinner et,ft,gt,ht;
-    EditText hospital,city,contact,at,bt,ct,dt;
+    EditText hospital,city,contact,at,bt,ct,dt,et,ft,gt,ht;
     Add add;
     DatabaseReference Ref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +43,14 @@ public class UpdateBloodList extends AppCompatActivity {
         bt = findViewById(R.id.btt);
         ct = findViewById(R.id.ctt);
         dt = findViewById(R.id.dtt);
-        et = findViewById(R.id.eSpinner);
-        ft = findViewById(R.id.fSpinner);
-        gt = findViewById(R.id.gSpinner);
-        ht = findViewById(R.id.hSpinner);
+        et = findViewById(R.id.ett);
+        ft = findViewById(R.id.ftt);
+        gt = findViewById(R.id.gtt);
+        ht = findViewById(R.id.htt);
         hospital = findViewById(R.id.hospital);
         city = findViewById(R.id.city);
         contact = findViewById(R.id.contact);
+
 
         String as = getIntent().getStringExtra("aa");
         String bs = getIntent().getStringExtra("bb");
@@ -65,10 +68,10 @@ public class UpdateBloodList extends AppCompatActivity {
         bt.setText(bs);
         ct.setText(cs);
         dt.setText(ds);
-        et.setSelected(Boolean.parseBoolean(es));
-        ft.setSelected(Boolean.parseBoolean(fs));
-        gt.setSelected(Boolean.parseBoolean(gs));
-        ht.setSelected(Boolean.parseBoolean(hs));
+        et.setText(es);
+        ft.setText(fs);
+        gt.setText(gs);
+        ht.setText(hs);
         hospital.setText(hos);
         city.setText(cit);
         contact.setText(con);
@@ -100,10 +103,10 @@ public class UpdateBloodList extends AppCompatActivity {
                 String b = bt.getText().toString();
                 String c = ct.getText().toString();
                 String d = dt.getText().toString();
-                String e = et.getSelectedItem().toString();
-                String f = ft.getSelectedItem().toString();
-                String g = gt.getSelectedItem().toString();
-                String h = ht.getSelectedItem().toString();
+                String e = et.getText().toString();
+                String f = ft.getText().toString();
+                String g = gt.getText().toString();
+                String h = ht.getText().toString();
                 String contactt = contact.getText().toString();
                 String cit = city.getText().toString();
                 String hos = hospital.getText().toString();
