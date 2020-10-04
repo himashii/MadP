@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +29,7 @@ public class UpdateBloodList extends AppCompatActivity {
     EditText hospital,city,contact,at,bt,ct,dt,et,ft,gt,ht;
     Add add;
     DatabaseReference Ref;
+    AwesomeValidation awesomeValidation;
 
 
     @Override
@@ -50,6 +52,32 @@ public class UpdateBloodList extends AppCompatActivity {
         hospital = findViewById(R.id.hospital);
         city = findViewById(R.id.city);
         contact = findViewById(R.id.contact);
+
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        awesomeValidation.addValidation(this,R.id.hospital,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_hospital_name);
+        awesomeValidation.addValidation(this,R.id.contact,
+                "[0-9]{10}$",R.string.invalid_phone_number);
+        awesomeValidation.addValidation(this,R.id.city,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_city);
+        awesomeValidation.addValidation(this,R.id.att,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.btt,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.ctt,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.dtt,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.ett,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.ftt,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.gtt,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+        awesomeValidation.addValidation(this,R.id.htt,
+                RegexTemplate.NOT_EMPTY,R.string.invalid);
+
 
 
         String as = getIntent().getStringExtra("aa");
@@ -99,6 +127,8 @@ public class UpdateBloodList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if(awesomeValidation.validate()){
+
                 String a = at.getText().toString();
                 String b = bt.getText().toString();
                 String c = ct.getText().toString();
@@ -130,14 +160,21 @@ public class UpdateBloodList extends AppCompatActivity {
                 Ref.child("1").updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {
-                        Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(getApplicationContext(),List.class);
+                        Toast.makeText(getApplicationContext(), "Successfully Updated", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), List.class);
                         startActivity(i);
+
                     }
                 });
+                }else
 
-            }
-        });
+                    {
+                        Toast.makeText(getApplicationContext(), "Validation Failed..", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                });
+
+
 
 
         button2.setOnClickListener(new View.OnClickListener() {
@@ -147,10 +184,15 @@ public class UpdateBloodList extends AppCompatActivity {
                 startActivity(i);
             }
         });
-    }
 
-    public void showToast(View view) {
-        Toast toast = Toast.makeText(getApplicationContext(),"Details Updated",Toast.LENGTH_LONG);
-        toast.show();
-    }
-}
+
+        /*public void showToast(View view) {
+            Toast toast = Toast.makeText(getApplicationContext(),"Details Updated",Toast.LENGTH_LONG);
+            toast.show();
+        }*/
+
+            }
+        };
+
+
+

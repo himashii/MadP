@@ -76,8 +76,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="20dp"
-                    android:fontFamily="sans-serif-black"
-                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+
                     android:textColor="#000000"
                     android:text="Hospital Name -" />
 
@@ -312,8 +312,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif"
                 android:textColor="#000000"
                 android:text="City -" />
 
@@ -342,8 +341,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif"
                 android:textColor="#000000"
                 android:text="Tele -" />
 
