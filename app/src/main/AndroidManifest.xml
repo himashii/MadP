@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".up_Details"></activity>
+        <activity android:name=".show_Details" />
+        <activity android:name=".Add_ReqBlood" />
+        <activity android:name=".Retrieve_Hos" />
         <activity android:name=".List1" />
         <activity android:name=".List" />
         <activity android:name=".UpdateBloodList" />
